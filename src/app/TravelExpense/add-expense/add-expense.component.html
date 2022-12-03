@@ -1,0 +1,76 @@
+<div class="container m-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card card-outline-secondary">
+        <div class="card-header">
+          <h3 class="mb-0">Add Expense</h3>
+        </div>
+
+        <div class="card-body">
+          <form [formGroup]="empExpenseForm" (ngSubmit)="onSubmit()">
+            <!-- <div class="row mb-4"></div> -->
+            <!-- <div class="col"> -->
+
+            <!-- <div class="mb-3"> -->
+            <!-- <br /> -->
+            <div class="mb-3">
+              <label for="travelExpenseDate">Travel Expense Date: </label>
+              <input
+                class="form-control"
+                id="travelExpenseDate"
+                type="date"
+                formControlName="travelExpenseDate"
+              />
+              <br />
+            </div>
+
+            <div class="mb-3">
+              <label for="travelCostExpense">Expense Cost: </label>
+              <input
+                class="form-control"
+                id="travelCostExpense"
+                type="text"
+                formControlName="travelCostExpense"
+              /><br />
+            </div>
+
+            <div class="mb-3">
+              <label for="travelDetails">Expense Details: </label>
+              <input
+                class="form-control"
+                id="travelDetails"
+                type="text"
+                formControlName="travelDetails"
+              /><br />
+            </div>
+
+            <hr />
+            <!--button  -->
+            <div class="form-group row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" type="submit">
+                  Add New Expense
+                </button>
+              </div>
+
+              <!-- <div class="col-md-4">
+                      <button class="btn btn-danger" type="submit">
+                        Delete Employee
+                      </button>
+                    </div> -->
+            </div>
+            <!-- button -->
+
+            <!-- <button class="btn btn-success btn-lg float-right" type="submit">
+                      Add New Employee
+                    </button>
+                    <br />
+        
+                    <button type="submit" (click)="updateEmp()">update</button> -->
+            <!-- </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

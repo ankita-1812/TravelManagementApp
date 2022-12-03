@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card card-outline-secondary">
+      <div class="card-header">
+        <h3 class="mb-0">Login</h3>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <!-- <div class="row mb-4"></div> -->
+          <!-- <div class="col"> -->
+          <div class="mb-3">
+            <label class="form-label" for="userName">UserName : </label>
+            <input
+              class="form-control"
+              id="userName"
+              type="text"
+              formControlName="userName"
+            />
+            <!-- <label class="form-label">Name</label> -->
+            <!-- </div> -->
+          </div>
+
+          <!-- <div class="mb-3"> -->
+          <!-- <br /> -->
+          <div class="mb-3">
+            <label for="password">Password: </label>
+            <input
+              class="form-control"
+              id="password"
+              type="password"
+              formControlName="password"
+            />
+            <br />
+          </div>
+
+          <!--button  -->
+          <br />
+          <select formControlName="loginType">
+            <option *ngFor="let lt of loginType" [ngValue]="lt">
+              {{ lt.userType }}
+            </option>
+          </select>
+          <!-- <div class="col-md-4">
+                      <button class="btn btn-danger" type="submit">
+                        Delete Employee
+                      </button>
+                    </div> -->
+          <br />
+          <hr />
+          <div class="form-group row">
+            <div class="col-md-4">
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </div>
+          <!-- button -->
+
+          <!-- <button class="btn btn-success btn-lg float-right" type="submit">
+                      Add New Employee
+                    </button>
+                    <br />
+        
+                    <button type="submit" (click)="updateEmp()">update</button> -->
+          <!-- </div> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

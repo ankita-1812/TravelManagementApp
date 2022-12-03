@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card card-outline-secondary">
+      <div class="card-header">
+        <h3 class="mb-0">Update Request</h3>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="empRequestForm" (ngSubmit)="onSubmit()">
+          <!-- <div class="row mb-4"></div> -->
+          <!-- <div class="col"> -->
+
+          <div class="mb-3">
+            <label for="travelRequestStatus">Request Status: </label>
+            <input
+              class="form-control"
+              id="travelRequestStatus"
+              type="text"
+              formControlName="travelRequestStatus"
+            /><br />
+          </div>
+
+          <hr />
+          <!--button  -->
+          <div class="form-group row">
+            <div class="col-md-4">
+              <button class="btn btn-primary" type="submit">
+                Update Request
+              </button>
+            </div>
+
+            <!-- <div class="col-md-4">
+                      <button class="btn btn-danger" type="submit">
+                        Delete Employee
+                      </button>
+                    </div> -->
+          </div>
+          <!-- button -->
+
+          <!-- <button class="btn btn-success btn-lg float-right" type="submit">
+                      Add New Employee
+                    </button>
+                    <br />
+        
+                    <button type="submit" (click)="updateEmp()">update</button> -->
+          <!-- </div> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

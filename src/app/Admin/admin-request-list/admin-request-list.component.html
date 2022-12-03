@@ -1,0 +1,133 @@
+<p>request-list works!</p>
+
+<br /><br />
+&nbsp; &nbsp;
+<input type="text" class="input" placeholder="Enter status" [(ngModel)]="fbs" />
+&nbsp; &nbsp;
+<button class="btn btn-primary" (click)="findByStatus()">
+  Search By status
+</button>
+
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<input type="date" class="input" [(ngModel)]="fbd" />
+&nbsp; &nbsp;
+<button class="btn btn-primary" (click)="findByDate()">Search By date</button>
+<br />
+<br />
+
+<div class="table-responsive" style="margin: 40px">
+  <table class="table table-responsive table-borderless">
+    <thead>
+      <tr class="bg-light">
+        <th scope="col" width="5%">Id</th>
+        <th scope="col" width="10%">Date</th>
+        <th scope="col" width="10%">Status</th>
+        <th scope="col" width="10%">Start Date</th>
+        <th scope="col" width="10%">End Date</th>
+        <th scope="col" width="10%">Reason</th>
+        <th scope="col" width="8%">Dest From</th>
+        <th scope="col" width="8%">Dest To</th>
+        <th scope="col" width="8%">Travel Mode</th>
+        <th scope="col" width="9%">Employee Id</th>
+        <th scope="col" width="8%">Cost</th>
+        <th scope="col" width="5%">Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of reqList">
+        <td>{{ r.travelRequestId }}</td>
+        <td>{{ r.travelRequestDate }}</td>
+        <td>
+          <i
+            *ngIf="r.travelRequestStatus == 'approved'"
+            class="fa fa-check-circle-o green"
+            style="color: green; font-size: 22px"
+          ></i>
+          <i
+            *ngIf="r.travelRequestStatus == 'pending'"
+            class="fa fa-clock-o"
+            style="color: blue; font-size: 22px"
+          ></i>
+
+          <i
+            *ngIf="r.travelRequestStatus == 'rejected'"
+            class="fa fa-dot-circle-o"
+            style="color: red; font-size: 22px"
+          ></i>
+
+          {{ r.travelRequestStatus }}
+        </td>
+        <td>
+          {{ r.travelRequestStartDate }}
+        </td>
+        <td>
+          <!-- <img src="https://i.imgur.com/nmnmfGv.png" width="25" />  -->
+          {{ r.travelRequestStartDate }}
+        </td>
+        <td>{{ r.travelRequestReason }}</td>
+        <td>{{ r.destinationFrom }}</td>
+        <td>{{ r.destinationTo }}</td>
+        <td>{{ r.modeOfTravel }}</td>
+        <td>{{ r.employee.empId }}</td>
+        <td>
+          <span class="fw-bolder">${{ r.estimatedExpense }}</span>
+        </td>
+        <td>
+          <button
+            class="btn btn-primary"
+            type="submit"
+            (click)="updateRequestStatus(r.travelRequestId)"
+          >
+            <i class="fa fa-pencil"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 
+<div class="container">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Request Date</th>
+        <th>Request Status</th>
+
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Reason</th>
+        <th>Dest From</th>
+        <th>Dest To</th>
+        <th>Estimate Expense</th>
+        <th>Mode of Travel</th>
+        <th>Emp Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of reqList">
+        <td>{{ r.travelRequestId }}</td>
+        <td>{{ r.travelRequestDate }}</td>
+        <td>{{ r.travelRequestStatus }}</td>
+        <td>{{ r.travelRequestStartDate }}</td>
+        <td>{{ r.travelRequestEndDate }}</td>
+        <td>{{ r.travelRequestReason }}</td>
+        <td>{{ r.destinationFrom }}</td>
+        <td>{{ r.destinationTo }}</td>
+        <td>{{ r.estimatedExpense }}</td>
+        <td>{{ r.modeOfTravel }}</td>
+        <td>{{ r.employee.empId }}</td>
+        <td>
+          <button
+            class="btn btn-primary"
+            type="submit"
+            (click)="updateRequestStatus(r.travelRequestId)"
+          >
+            Update
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->

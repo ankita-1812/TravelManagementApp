@@ -1,0 +1,125 @@
+<div class="container m-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card card-outline-secondary">
+        <div class="card-header">
+          <h3 class="mb-0">Add Request</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="empRequestForm" (ngSubmit)="onSubmit()">
+            <!-- <div class="row mb-4"></div> -->
+            <!-- <div class="col"> -->
+
+            <!-- <div class="mb-3"> -->
+            <!-- <br /> -->
+            <div class="mb-3">
+              <label for="travelRequestDate">Travel Request Date: </label>
+              <input
+                class="form-control"
+                id="travelRequestDate"
+                type="date"
+                formControlName="travelRequestDate"
+              />
+              <br />
+            </div>
+
+            <div class="mb-3">
+              <label for="travelRequestStartDate">Request Start Date: </label>
+              <input
+                class="form-control"
+                id="travelRequestStartDate"
+                type="date"
+                formControlName="travelRequestStartDate"
+              /><br />
+            </div>
+
+            <div class="mb-3">
+              <label for="travelRequestEndDate">Request End Date: </label>
+              <input
+                class="form-control"
+                id="travelRequestEndDate"
+                type="date"
+                formControlName="travelRequestEndDate"
+              /><br />
+            </div>
+
+            <div class="mb-3">
+              <label for="travelRequestReason">Request Reason: </label>
+              <input
+                class="form-control"
+                id="travelRequestReason"
+                type="text"
+                formControlName="travelRequestReason"
+              /><br />
+            </div>
+
+            <div class="mb-3">
+              <label for="destinationFrom">Destination From: </label>
+              <input
+                class="form-control"
+                id="destinationFrom"
+                type="text"
+                formControlName="destinationFrom"
+              /><br />
+            </div>
+
+            <div class="mb-3">
+              <label for="destinationTo">Destination To: </label>
+              <input
+                class="form-control"
+                id="destinationTo"
+                type="text"
+                formControlName="destinationTo"
+              /><br />
+            </div>
+
+            <div class="mb-3">
+              <label for="estimatedExpense">Estimated Expense: </label>
+              <input
+                class="form-control"
+                id="estimatedExpense"
+                type="number"
+                formControlName="estimatedExpense"
+              /><br />
+            </div>
+
+            <div class="mb-3">
+              <label for="modeOfTravel">Mode of Travel: </label>
+              <input
+                class="form-control"
+                id="modeOfTravel"
+                type="text"
+                formControlName="modeOfTravel"
+              /><br />
+            </div>
+
+            <hr />
+            <!--button  -->
+            <div class="form-group row">
+              <div class="col-md-4">
+                <button class="btn btn-primary" type="submit">
+                  Add New Request
+                </button>
+              </div>
+
+              <!-- <div class="col-md-4">
+                    <button class="btn btn-danger" type="submit">
+                      Delete Employee
+                    </button>
+                  </div> -->
+            </div>
+            <!-- button -->
+
+            <!-- <button class="btn btn-success btn-lg float-right" type="submit">
+                    Add New Employee
+                  </button>
+                  <br />
+      
+                  <button type="submit" (click)="updateEmp()">update</button> -->
+            <!-- </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

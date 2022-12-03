@@ -1,0 +1,110 @@
+<br /><br />
+&nbsp; &nbsp;
+<input type="text" class="input" placeholder="Enter status" [(ngModel)]="fbs" />
+&nbsp; &nbsp;
+<button class="btn btn-primary" (click)="findByStatus()">
+  Search By status
+</button>
+
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+<input type="date" class="input" [(ngModel)]="fbd" />
+&nbsp; &nbsp;
+<button class="btn btn-primary" (click)="findByDate()">Search By date</button>
+<br />
+<br />
+
+<div class="table-responsive" style="margin: 40px">
+  <table class="table table-responsive table-borderless">
+    <thead>
+      <tr class="bg-light">
+        <th scope="col" width="6%">Id</th>
+        <th scope="col" width="10%">Status</th>
+        <th scope="col" width="10%">Date</th>
+        <th scope="col" width="20%">Reason</th>
+        <th scope="col" width="7%">Cost</th>
+
+        <th scope="col" width="5%">Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ex of expList">
+        <td>{{ ex.travelExpenseId }}</td>
+        <td>
+          <i
+            *ngIf="ex.travelExpenseStatus == 'approved'"
+            class="fa fa-check-circle-o green"
+            style="color: green; font-size: 22px"
+          ></i>
+          <i
+            *ngIf="ex.travelExpenseStatus == 'pending'"
+            class="fa fa-clock-o"
+            style="color: blue; font-size: 22px"
+          ></i>
+
+          <i
+            *ngIf="ex.travelExpenseStatus == 'rejected'"
+            class="fa fa-dot-circle-o"
+            style="color: red; font-size: 22px"
+          ></i>
+          &nbsp;
+          {{ ex.travelExpenseStatus }}
+        </td>
+        <td>
+          {{ ex.travelExpenseDate }}
+        </td>
+
+        <td>{{ ex.travelDetails }}</td>
+
+        <td>
+          <span class="fw-bolder">${{ ex.travelCostExpense }}</span>
+        </td>
+        <td>
+          <button
+            class="btn btn-primary"
+            type="submit"
+            (click)="updateExpenseStatus(ex.travelExpenseId)"
+          >
+            <i class="fa fa-pencil"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- 
+<div class="container">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Expense Date</th>
+        <th>Expense Status</th>
+        <th>Expense Cost</th>
+        <th>Expense Reason</th>
+        <th>Employee Id</th>
+        <th>Reques Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ex of expList">
+        <td>{{ ex.travelExpenseId }}</td>
+        <td>{{ ex.travelExpenseDate }}</td>
+        <td>{{ ex.travelExpenseStatus }}</td>
+        <td>{{ ex.travelCostExpense }}</td>
+        <td>{{ ex.travelDetails }}</td>
+        <td>{{ ex.employee.empId }}</td>
+
+        <td>{{ ex.travelRequest.travelRequestId }}</td>
+        <td>
+          <button
+            class="btn btn-primary"
+            type="submit"
+            (click)="updateExpenseStatus(ex.travelExpenseId)"
+          >
+            Update
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->

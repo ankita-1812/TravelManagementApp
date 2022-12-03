@@ -1,0 +1,77 @@
+<section style="background-color: #eee">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-3">
+          <div class="card-body text-center">
+            <!-- https://bootdey.com/img/Content/avatar/avatar3.png       https://bootdey.com/img/Content/avatar/avatar7.png -->
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+              alt="avatar"
+              class="rounded-circle img-fluid"
+              style="width: 150px"
+            />
+            <h5 class="my-3">{{ emp.empName }}</h5>
+            <p class="text-muted mb-1">PID {{ emp.empId }}</p>
+            <p class="text-muted mb-4">
+              <a href="/updatePassword">Forgot Password?</a>
+            </p>
+            <p class="text-muted mb-4">
+              <a class="btn btn-primary" href="/updateEmp">Update</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4" style="padding: 20px">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Full Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ emp.empName }}</p>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ emp.empMail }}</p>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Phone</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">(+91) {{ emp.empContactNo }}</p>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Address</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ emp.empAddr }}</p>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Department</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ emp.empDept }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
