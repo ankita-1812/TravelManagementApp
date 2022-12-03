@@ -27,7 +27,7 @@ const routes: Routes = [
   {path:'Home',component:EmpHomeComponent},
   {path:'login',component:LoginPageComponent},
   {path:'empProfile',component:EmpProfileComponent},
-  {path:'reqList',component:RequestListComponent},
+  {path:'TravelManagementApp/reqList',component:RequestListComponent},
   {path:'addReq',component:AddReqComponent},
   {path:'updateReq',component:UpdateReqComponent},
   {path:'expList',component:ExpenseListComponent},
