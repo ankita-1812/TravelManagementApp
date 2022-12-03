@@ -28,28 +28,28 @@
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/Home">Home </a>
+        <a class="nav-link" routerLink="/Home">Home </a>
       </li>
       <li class="nav-item" *ngIf="checkEmp">
-        <a class="nav-link" href="/empProfile">Employee</a>
+        <a class="nav-link" routerLink="/empProfile">Employee</a>
       </li>
       <li class="nav-item" *ngIf="checkEmp">
-        <a class="nav-link" href="/TravelManagementApp/reqList">Request</a>
+        <a class="nav-link" routerLink="/reqList">Request</a>
       </li>
       <li class="nav-item" *ngIf="checkEmp">
-        <a class="nav-link" href="/addReq">Add Request</a>
+        <a class="nav-link" routerLink="/addReq">Add Request</a>
       </li>
       <li class="nav-item" *ngIf="checkAdmin">
-        <a class="nav-link" href="/addEmp">Register Employee</a>
+        <a class="nav-link" routerLink="/addEmp">Register Employee</a>
       </li>
       <li class="nav-item" *ngIf="checkAdmin">
-        <a class="nav-link" href="/AdminRequestList">Request List</a>
+        <a class="nav-link" routerLink="/AdminRequestList">Request List</a>
       </li>
       <li class="nav-item" *ngIf="checkAdmin">
-        <a class="nav-link" href="/AdminExpenseList">Response List</a>
+        <a class="nav-link" routerLink="/AdminExpenseList">Response List</a>
       </li>
       <li class="nav-item" *ngIf="checkAdmin">
-        <a class="nav-link" href="/empList">Employee List</a>
+        <a class="nav-link" routerLink="/empList">Employee List</a>
       </li>
 
       <li class="nav-item" *ngIf="!checkLogin">
