@@ -24,6 +24,7 @@ import { AdminRequestListComponent } from './Admin/admin-request-list/admin-requ
 import { UpdateEmpComponent } from './Employee/update-emp/update-emp.component';
 import { HeaderComponent } from './Header/header/header.component';
 import { UpdatePassComponent } from './Login/update-pass/update-pass.component';
+import { FooterComponent } from './Footer/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { UpdatePassComponent } from './Login/update-pass/update-pass.component';
     AdminRequestListComponent,
     UpdateEmpComponent,
     HeaderComponent,
-    UpdatePassComponent
+    UpdatePassComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

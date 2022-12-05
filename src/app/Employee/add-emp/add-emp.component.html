@@ -1,98 +1,119 @@
 <br /><br />
 <div class="row justify-content-center">
-  <div class="col-md-8">
-    <div class="card card-outline-secondary">
+  <div class="col-md-10">
+    <div class="card shadow p-3 mb-5 bg-white rounded">
       <div class="card-header">
         <h3 class="mb-1 p-3 d-flex justify-content-center">Add Employee</h3>
       </div>
-      <div class="card-body">
-        <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
-          <!-- <div class="row mb-4"></div> -->
-          <!-- <div class="col"> -->
+      <div class="row">
+        <div class="col-md-7">
+          <div class="card-body">
+            <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+              <!-- <div class="row mb-4"></div> -->
+              <!-- <div class="col"> -->
 
-          <!-- <div class="mb-3"> -->
-          <!-- <br /> -->
-          <div class="row g-3">
-            <div class="col">
-              <label class="form-label" for="empName">Employee Name: </label>
-              <input
-                class="form-control"
-                id="empName"
-                type="text"
-                formControlName="empName"
-              />
-              <br />
-            </div>
-            <div class="col">
-              <label class="form-label" for="empMail">Employee Email: </label>
-              <input
-                class="form-control"
-                id="empMail"
-                type="text"
-                formControlName="empMail"
-              /><br />
-            </div>
+              <!-- <div class="mb-3"> -->
+              <!-- <br /> -->
+              <div class="row g-3">
+                <div class="col">
+                  <label class="form-label" for="empName"
+                    >Employee Name:
+                  </label>
+                  <input
+                    class="form-control"
+                    id="empName"
+                    type="text"
+                    formControlName="empName"
+                  />
+                  <br />
+                </div>
+                <div class="col">
+                  <label class="form-label" for="empMail"
+                    >Employee Email:
+                  </label>
+                  <input
+                    class="form-control"
+                    id="empMail"
+                    type="text"
+                    formControlName="empMail"
+                  /><br />
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="empAddr"
+                  >Employee Address:
+                </label>
+                <input
+                  class="form-control"
+                  id="empAddr"
+                  type="text"
+                  formControlName="empAddr"
+                /><br />
+              </div>
+
+              <div class="row g-3">
+                <div class="col">
+                  <label class="form-label" for="empDept"
+                    >Employee Dept:
+                  </label>
+                  <input
+                    class="form-control"
+                    id="empDept"
+                    type="text"
+                    formControlName="empDept"
+                  /><br />
+                </div>
+
+                <div class="col">
+                  <label class="form-label" for="empContactNo"
+                    >Employee ContactNo:
+                  </label>
+                  <input
+                    class="form-control"
+                    id="empContactNo"
+                    type="text"
+                    formControlName="empContactNo"
+                  /><br />
+                </div>
+              </div>
+
+              <hr />
+              <!--button  -->
+              <div class="form-group row">
+                <div class="col-md-4">
+                  <button
+                    class="btn btn-primary"
+                    type="submit"
+                    [disabled]="!empForm.valid"
+                  >
+                    Add New Employees
+                  </button>
+                </div>
+
+                <!-- <div class="col-md-4">
+                    <button class="btn btn-danger" type="submit">
+                      Delete Employee
+                    </button>
+                  </div> -->
+              </div>
+              <!-- button -->
+
+              <!-- <button class="btn btn-success btn-lg float-right" type="submit">
+                    Add New Employee
+                  </button>
+                  <br />
+      
+                  <button type="submit" (click)="updateEmp()">update</button> -->
+              <!-- </div> -->
+            </form>
           </div>
-
-          <div class="mb-3">
-            <label class="form-label" for="empAddr">Employee Address: </label>
-            <input
-              class="form-control"
-              id="empAddr"
-              type="text"
-              formControlName="empAddr"
-            /><br />
-          </div>
-
-          <div class="row g-3">
-            <div class="col">
-              <label class="form-label" for="empDept">Employee Dept: </label>
-              <input
-                class="form-control"
-                id="empDept"
-                type="text"
-                formControlName="empDept"
-              /><br />
-            </div>
-
-            <div class="col">
-              <label class="form-label" for="empContactNo"
-                >Employee ContactNo:
-              </label>
-              <input
-                class="form-control"
-                id="empContactNo"
-                type="text"
-                formControlName="empContactNo"
-              /><br />
-            </div>
-          </div>
-
-          <hr />
-          <!--button  -->
-          <div class="form-group row">
-            <div class="col-md-4">
-              <button class="btn btn-primary" type="submit">
-                Add New Employees
-              </button>
-            </div>
-
-            <!-- <div class="col-md-4">
-                <button class="btn btn-danger" type="submit">
-                  Delete Employee
-                </button>
-              </div> -->
-          </div>
-          <!-- button -->
-
-          <!-- <button class="btn btn-success btn-lg float-right" type="submit">
-                Add New Employee
-              </button>
-              <br />
-  
-              <button type="submit" (click)="updateEmp()">update</button> -->
+        </div>
+        <div class="col-md-2">
+          <!-- <div class="col-md-3"> -->
+          <img src="assets/img/adduser.svg" alt="" width="250%" />
           <!-- </div> -->
-        </form>
+        </div>
       </div>
     </div>
   </div>

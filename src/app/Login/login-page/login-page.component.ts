@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Admin } from 'src/app/Admin/Admin';
 
@@ -31,10 +31,29 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm=this.fb.group({
-      userName:['',Validators.required],
-      password:['',Validators.required],
-      loginType:['',Validators.required]
+
+      userName:new FormControl('',[Validators.required]),
+
+      password: new FormControl('',[Validators.required]),
+
+      loginType: new FormControl('',[Validators.required])
+
     })
+
+  
+  }
+  get password(){
+
+    return this.loginForm.get('password');
+
+  }
+
+
+
+  get userName(){
+
+    return this.loginForm.get('userName');
+
   }
  
   onSubmit(){

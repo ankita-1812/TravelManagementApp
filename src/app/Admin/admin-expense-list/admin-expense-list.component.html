@@ -1,19 +1,27 @@
-<br /><br />
-&nbsp; &nbsp;
-<input type="text" class="input" placeholder="Enter status" [(ngModel)]="fbs" />
-&nbsp; &nbsp;
-<button class="btn btn-primary" (click)="findByStatus()">
-  Search By status
-</button>
+<div class="container search m-4 bg-light">
+  <br />
+  &nbsp; &nbsp;
+  <input
+    type="text"
+    class="input"
+    placeholder="Enter status"
+    [(ngModel)]="fbs"
+  />
+  &nbsp; &nbsp;
+  <button class="btn btn-primary" (click)="findByStatus()">
+    Search By status
+  </button>
 
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-<input type="date" class="input" [(ngModel)]="fbd" />
-&nbsp; &nbsp;
-<button class="btn btn-primary" (click)="findByDate()">Search By date</button>
-<br />
-<br />
+  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+  <input type="date" class="input" [(ngModel)]="fbd" />
+  &nbsp; &nbsp;
+  <button class="btn btn-primary" (click)="findByDate()">Search By date</button>
+  <br />
+  <br />
+</div>
 
 <div class="table-responsive" style="margin: 40px">
+  <h2 class="exp">Claimed Expenses</h2>
   <table class="table table-responsive table-borderless">
     <thead>
       <tr class="bg-light">
@@ -21,12 +29,14 @@
         <th scope="col" width="10%">Status</th>
         <th scope="col" width="10%">Date</th>
         <th scope="col" width="20%">Reason</th>
+        <th scope="col" width="7%">Employee id</th>
+        <th scope="col" width="7%">Req id</th>
         <th scope="col" width="7%">Cost</th>
 
         <th scope="col" width="5%">Update</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="bg-light">
       <tr *ngFor="let ex of expList">
         <td>{{ ex.travelExpenseId }}</td>
         <td>
@@ -54,10 +64,16 @@
         </td>
 
         <td>{{ ex.travelDetails }}</td>
-
+        <td>
+          {{ ex.employee.empId }}
+        </td>
+        <td>
+          {{ ex.travelRequest.travelRequestId }}
+        </td>
         <td>
           <span class="fw-bolder">${{ ex.travelCostExpense }}</span>
         </td>
+
         <td>
           <button
             class="btn btn-primary"

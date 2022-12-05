@@ -45,8 +45,9 @@ export class UpdateExpenseComponent implements OnInit {
     this.travelExpenseService.updateExpense(this.expid,this.empExpenseForm.value).subscribe(data=>{
       if(data!=null)
       swal("Updated Succesfully ","","success");
+      this.router.navigate(['/expList']);
     });
-    this.router.navigate(['/expList'])
+   
   }
 
 }

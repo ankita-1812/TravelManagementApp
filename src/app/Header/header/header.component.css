@@ -1,6 +1,6 @@
 .nav-link{
  color: black;   
 }
-.nav-link:active{
+.nav-link:focus{
     color: black;
 }

@@ -43,7 +43,7 @@ btnactive:boolean=false;
   }
   checkfun(reqStatus:string){
     console.log(reqStatus)
-    if(reqStatus=='approved')
+    if(reqStatus=='approved' || reqStatus=='Approved')
     return false;
     else
     return true;

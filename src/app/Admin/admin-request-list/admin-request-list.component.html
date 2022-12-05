@@ -1,21 +1,27 @@
-<p>request-list works!</p>
+<div class="container search m-4 bg-light">
+  <br />
 
-<br /><br />
-&nbsp; &nbsp;
-<input type="text" class="input" placeholder="Enter status" [(ngModel)]="fbs" />
-&nbsp; &nbsp;
-<button class="btn btn-primary" (click)="findByStatus()">
-  Search By status
-</button>
+  <input
+    type="text"
+    class="input"
+    placeholder="Enter status"
+    [(ngModel)]="fbs"
+  />
+  &nbsp; &nbsp;
+  <button class="btn btn-primary" (click)="findByStatus()">
+    Search By status
+  </button>
 
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-<input type="date" class="input" [(ngModel)]="fbd" />
-&nbsp; &nbsp;
-<button class="btn btn-primary" (click)="findByDate()">Search By date</button>
-<br />
-<br />
+  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+  <input type="date" class="input" [(ngModel)]="fbd" />
+  &nbsp; &nbsp;
+  <button class="btn btn-primary" (click)="findByDate()">Search By date</button>
+  <br />
+  <br />
+</div>
 
 <div class="table-responsive" style="margin: 40px">
+  <h2 class="req">Requests</h2>
   <table class="table table-responsive table-borderless">
     <thead>
       <tr class="bg-light">
@@ -33,7 +39,7 @@
         <th scope="col" width="5%">Update</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="bg-light">
       <tr *ngFor="let r of reqList">
         <td>{{ r.travelRequestId }}</td>
         <td>{{ r.travelRequestDate }}</td>

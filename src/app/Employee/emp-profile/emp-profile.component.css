@@ -10,3 +10,11 @@
     cursor: pointer;
   }
   
+  .emp-p{
+    text-align: center;
+    background-color: white;
+    /* padding: 4px; */
+    font-weight: bolder;
+    color:rgb(5,79,139)    ;
+
+}

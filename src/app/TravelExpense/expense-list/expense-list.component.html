@@ -1,8 +1,9 @@
 <div class="container m-4">
-  <a class="btn btn-primary" href="/addExpense">Add Expense</a>
+  <a class="btn btn-success" href="/addExpense">Add Expense</a>
 </div>
 
 <div class="table-responsive" style="margin: 40px">
+  <h2 class="exp">Claimed Expenses</h2>
   <table class="table table-responsive table-borderless">
     <thead>
       <tr class="bg-light">
@@ -17,7 +18,7 @@
         <th scope="col" width="5%">Delete</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="bg-light">
       <tr *ngFor="let ex of expList">
         <td>{{ ex.travelExpenseId }}</td>
         <td>
