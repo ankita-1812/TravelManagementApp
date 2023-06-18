@@ -9,31 +9,31 @@ import { Employee } from '../Employee/Employee';
   providedIn: 'root'
 })
 export class EmployeeService {
-  private baseUrl="http://localhost:8282/admin";
+  private baseUrl="https://travel-management-api-kf5h.onrender.com";
 
 
   constructor(private httpService:HttpClient) { }
 
   getEmplist(){
     console.log(this.httpService.get<any[]>(this.baseUrl+'/findallemp'));
-    return this.httpService.get<Employee[]>('http://localhost:8282/admin/findallemp');
+    return this.httpService.get<Employee[]>(this.baseUrl+'/admin/findallemp');
   }
 
   public addEmployee(employee:Employee):Observable<any>{
     const headers = { 'content-type': 'application/json'}  
     console.log(JSON.stringify(employee));
-    return this.httpService.post('http://localhost:8282/admin/addemp',JSON.stringify(employee),{'headers':headers});
+    return this.httpService.post(this.baseUrl+'/admin/addemp',JSON.stringify(employee),{'headers':headers});
     }
     
     public updateEmp(empid:string,emp:Employee){
-      return this.httpService.put('http://localhost:8282/employee/updateemp/'+empid,emp);
+      return this.httpService.put(this.baseUrl+'/employee/updateemp/'+empid,emp);
     }
   
     public findEmpByid(empid:string){
-      return this.httpService.get<Employee>('http://localhost:8282/employee/findempbyid/'+empid);
+      return this.httpService.get<Employee>(this.baseUrl+'/employee/findempbyid/'+empid);
     }
     public deleteEmp(empid:number){
-      return this.httpService.delete('http://localhost:8282/admin/deleteemp/'+empid);
+      return this.httpService.delete(this.baseUrl+'/admin/deleteemp/'+empid);
     }
 
 }

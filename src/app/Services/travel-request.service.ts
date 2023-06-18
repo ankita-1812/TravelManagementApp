@@ -10,48 +10,48 @@ import { TravelRequest } from '../TravelRequest/TravelRequest';
 })
 export class TravelRequestService {
   empId:any;
-  private baseUrl="http://localhost:8282/admin";
+  private baseUrl="https://travel-management-api-kf5h.onrender.com";
   constructor(private httpService:HttpClient) { }
   getRequestlist(){
     this.empId=sessionStorage.getItem("empId");
-    return this.httpService.get<TravelRequest[]>('http://localhost:8282/employee/getalltravelrequest/'+this.empId);
+    return this.httpService.get<TravelRequest[]>(this.baseUrl+'/employee/getalltravelrequest/'+this.empId);
   }
 
   public addRequest(empId:string,travelRequest:TravelRequest):Observable<any>{
     const headers = { 'content-type': 'application/json'}  
     console.log(JSON.stringify(travelRequest));
-    return this.httpService.post('http://localhost:8282/employee/addemprequest/'+empId,JSON.stringify(travelRequest),{'headers':headers});
+    return this.httpService.post(this.baseUrl+'/employee/addemprequest/'+empId,JSON.stringify(travelRequest),{'headers':headers});
   }
   
   public updateRequest(empId:string,reqId:string,travelRequest:TravelRequest){
-    return this.httpService.put('http://localhost:8282/employee/updateemprequest/'+reqId,travelRequest);
+    return this.httpService.put(this.baseUrl+'/employee/updateemprequest/'+reqId,travelRequest);
   }
 
   public updateRequestStatus(status:string){
-    return this.httpService.get('http://localhost:8282/admin/updaterequeststatus/111/1103/'+status);
+    return this.httpService.get(this.baseUrl+'/admin/updaterequeststatus/111/1103/'+status);
   }
 
   public  getReqById(reqId:number){
     
-    return this.httpService.get<TravelRequest>('http://localhost:8282/travelrequest/getreqbyid/'+reqId);
+    return this.httpService.get<TravelRequest>(this.baseUrl+'/travelrequest/getreqbyid/'+reqId);
   }
 
   public deleteReq(reqId:number){
-    return this.httpService.delete('http://localhost:8282/employee/deleteemprequest/'+reqId);
+    return this.httpService.delete(this.baseUrl+'/employee/deleteemprequest/'+reqId);
   }
   
   public getAllRequest(){
-    return this.httpService.get<AdminTravelRequest[]>('http://localhost:8282/travelrequest/findallreq');
+    return this.httpService.get<AdminTravelRequest[]>(this.baseUrl+'/travelrequest/findallreq');
   }
   public updateStatus(adminId:string,reqid:string,status:string){
-    return  this.httpService.get('http://localhost:8282/admin/updaterequeststatus/'+adminId+'/'+reqid+'/'+status); 
+    return  this.httpService.get(this.baseUrl+'/admin/updaterequeststatus/'+adminId+'/'+reqid+'/'+status); 
    }
 
    public findRequestByStatus(status:string){
-    return this.httpService.get<AdminTravelRequest[]>('http://localhost:8282/travelrequest/findbystatus/'+status);
+    return this.httpService.get<AdminTravelRequest[]>(this.baseUrl+'/travelrequest/findbystatus/'+status);
    }
    public findRequestByDate(date:string){
-    return this.httpService.get<AdminTravelRequest[]>('http://localhost:8282/travelrequest/findbydate/'+date);
+    return this.httpService.get<AdminTravelRequest[]>(this.baseUrl+'/travelrequest/findbydate/'+date);
    }
 }
 
